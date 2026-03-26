@@ -1,0 +1,17 @@
+=== UPPERCASE ===
+Текст в Upper Case: C# DOESN'T JUST AGE; IT MATURES WITH EVERY NEW VERSION.
+Текст в Upper Case: FROM LINQ TO RECORDS AND PATTERN MATCHING, IT KEEPS GETTING SHARPER.
+Текст в Upper Case: STAY CURIOUS, KEEP CODING, AND LET THE COMPILER DO THE HEAVY LIFTING.
+Текст в Upper Case: PD25
+
+=== КІЛЬКІСТЬ СИМВОЛІВ ===
+Кількість символів: 55
+Кількість символів: 68
+Кількість символів: 69
+Кількість символів: 4
+
+=== КІЛЬКІСТЬ СЛІВ ===
+Кількість слів: 10
+Кількість слів: 11
+Кількість слів: 12
+Кількість слів: 1
