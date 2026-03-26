@@ -1,37 +1,31 @@
-﻿using ModWork1;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.IO;
+using static ModWork1.TextOperations;
 
-namespace ModWork1;
-
-public class ProcessFile
+namespace ModWork1
 {
-    private TextOperations TextOperations = new TextOperations();
-
-    public void Process(string inputPath, string outputPath, TextOperations.TextOperation operation)
+    public class ProcessFile
     {
-        using (FileStream fsRead = new FileStream(inputPath, FileMode.Open, FileAccess.Read))
-        using (StreamReader sr = new StreamReader(fsRead))
+        public void Process(string inputPath, string outputPath, TextOperation operation)
         {
-            string line;
-            while ((line = sr.ReadLine()) != null)
+            using (var sr = new StreamReader(inputPath))
             {
-                string result = operation(line);
-                Console.WriteLine(result);
-                FileWriter(outputPath, result);
+                string? line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string result = operation(line);
+                    Console.WriteLine(result);
+                    FileWriter(outputPath, result);
+                }
             }
         }
-    }
 
-    private void FileWriter(string outputPath, string line)
-    {
-        using (FileStream fs = new FileStream(outputPath, FileMode.Append, FileAccess.Write))
-        using (StreamWriter sw = new StreamWriter(fs))
+        private void FileWriter(string outputPath, string line)
         {
-            sw.WriteLine(line);
+            using (var sw = new StreamWriter(outputPath, true))
+            {
+                sw.WriteLine(line);
+            }
         }
     }
 }
